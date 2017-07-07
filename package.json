@@ -1,19 +1,18 @@
 {
+  "name": "pi-led-controller",
+  "version": "1.0.0",
+  "main": "index.js",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3"
   },
-  "name": "server",
-  "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
   "optionalDependencies": {
     "pigpio": "^0.6.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": {
+    "name": "Mike Gilfillan",
+    "email": "mike@mgilfillan.co.uk"
   },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "MIT",
+  "description": "A basic interface to control LEDs using PWM"
 }
