@@ -7,9 +7,9 @@ try {
     console.log("Couldn't load gpio, using emulator");
 }
 
-let r = new Gpio(17, {mode: Gpio.OUTPUT});
-let g = new Gpio(22, {mode: Gpio.OUTPUT});
-let b = new Gpio(24, {mode: Gpio.OUTPUT});
+let r = new Gpio(16, {mode: Gpio.OUTPUT});
+let g = new Gpio(20, {mode: Gpio.OUTPUT});
+let b = new Gpio(21, {mode: Gpio.OUTPUT});
 
 class LightController {
     static get_state() {
@@ -22,11 +22,13 @@ class LightController {
         ['r', 'g', 'b'].forEach((key) => {
             let val = data[key];
             if ('number' === typeof val) {
+                //Clamp RGB values between 0 and 255
                 newState[key] = Math.min(255, Math.max(0, Math.round(val)));
             }
         });
 
         if ('number' === typeof data['luminance']) {
+            //Clamp luminance value between 0 and 1.0
             newState['luminance'] = Math.min(1.0, Math.max(0, data['luminance']));
         }
         console.log("Updating state from ", this.get_state(), " to ", newState, " over ", time, "ms");
