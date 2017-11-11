@@ -29,6 +29,7 @@ app.post('/animate', (req, res) => {
     }
     res.json(true);
 })
+const port = process.env.PORT || 8080;
 
-console.log("Listening on 127.0.0.1:8080");
-app.listen(8080);
+console.log("Listening on 127.0.0.1:" + port);
+app.listen(port);
