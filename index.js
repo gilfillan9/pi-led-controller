@@ -3,6 +3,7 @@ const app = express();
 
 const LightController = require('./LightController');
 
+app.use(require("cors")());
 app.use(require("body-parser").json());
 
 app.get('/', (req, res) => res.json(LightController.get_state()));

@@ -4,6 +4,7 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
     "express": "^4.15.3"
   },
   "optionalDependencies": {
