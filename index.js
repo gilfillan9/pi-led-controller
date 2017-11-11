@@ -28,7 +28,19 @@ app.post('/animate', (req, res) => {
         nextStep();
     }
     res.json(true);
-})
+});
+app.post('/toggle', (req, res) => {
+    if (LightController.get_state().luminance > 0) {
+        //Currently on, turn off
+        LightController.set_state({luminance: 0});
+    } else {
+        //Currently off, turn on
+        LightController.set_state({luminance: 1});
+    }
+
+    res.json(LightController.get_state());
+});
+
 const port = process.env.PORT || 8080;
 
 console.log("Listening on 127.0.0.1:" + port);
