@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.18.2",
     "cors": "^2.8.3",
-    "express": "^4.15.3"
+    "express": "^4.16.0",
+    "@snyk/protect": "latest"
   },
   "optionalDependencies": {
     "pigpio": "^0.6.0"
@@ -15,5 +16,10 @@
     "email": "mike@mgilfillan.co.uk"
   },
   "license": "MIT",
-  "description": "A basic interface to control LEDs using PWM"
+  "description": "A basic interface to control LEDs using PWM",
+  "scripts": {
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
